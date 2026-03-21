@@ -4,6 +4,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+# https://leetcode.com/problems/same-tree/
+
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         if p is None and q is None:
