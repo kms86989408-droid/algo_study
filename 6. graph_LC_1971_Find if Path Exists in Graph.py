@@ -28,4 +28,26 @@ class Solution:
 
         # stack DFS
 class Solution:
-    def 
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        
+        graph = {i : [] for i in range(n)}
+        
+        for a, b in edges:
+            graph[a].append(b)
+            graph[b].append(a)
+
+        stack = [source]
+        visited = set([source])
+
+        while stack:
+            node = stack.pop()
+
+            if node == destination:
+                return True
+            
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    stack.append(neighbor)
+        return False
+                                
